@@ -1,0 +1,240 @@
+/* Cores Neon */
+:root {
+    --color-primary: #ff9500; /* Laranja/Amarelo */
+    --color-secondary: #007bff; /* Azul */
+    --color-pink: #ff1493; /* Rosa/Cérebro */
+    --color-text: #ffffff;
+    --color-background-start: #1c0f4f; /* Roxo Escuro */
+    --color-background-end: #0a012a; /* Azul Escuro */
+}
+
+/* Estilos Gerais do Body */
+body {
+    /* Gradiente que simula o fundo escuro do design */
+    background: linear-gradient(135deg, var(--color-background-start), var(--color-background-end));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--color-text);
+    overflow: hidden; /* Garante que as formas de fundo fiquem no lugar */
+    position: relative;
+}
+
+/* Formas Abstratas de Fundo (para replicar o visual) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adiciona algumas formas geométricas simples */
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Alternância de Telas */
+.screen {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hide {
+    display: none !important;
+}
+
+/* --- ESTILOS DA PÁGINA INICIAL --- */
+
+.header-title {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-top: 50px;
+    /* Efeito Neon de Texto */
+    text-shadow: 0 0 10px var(--color-text), 0 0 20px var(--color-secondary);
+}
+
+.brain-icon {
+    width: 250px;
+    height: 250px;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Simulação da forma hexagonal neon */
+    border: 3px solid var(--color-secondary);
+    border-radius: 10%;
+    box-shadow: 0 0 20px var(--color-secondary), inset 0 0 10px var(--color-secondary);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.brain-icon::before {
+    content: '';
+    /* Simulação do cérebro com cor neon rosa e amarela */
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23ff1493" d="M102.4 204.8c-15.36 0-30.72-6.144-42.24-17.664C46.08 175.36 40.96 150.784 46.08 126.336 51.2 101.888 64.768 81.92 85.376 66.56 105.984 51.2 133.12 40.96 161.92 40.96c46.08 0 89.6 15.36 122.88 46.08 33.28 30.72 51.2 74.24 51.2 122.88 0 49.152-19.456 92.672-51.2 122.88-33.28 30.72-76.8 46.08-122.88 46.08-28.8 0-56.448-10.24-77.824-25.6-21.376-15.36-34.944-35.328-40.96-60.032-5.12-24.576-0.512-49.152 10.24-70.656 10.752-21.504 24.576-35.328 40.96-46.08 16.384-10.752 35.328-15.36 54.272-15.36 4.096 0 7.168 3.072 7.168 7.168 0 4.096-3.072 7.168-7.168 7.168-15.36 0-30.72 6.144-42.24 17.664C108.544 201.728 105.472 204.8 102.4 204.8zM256 409.6c46.08 0 89.6-15.36 122.88-46.08 33.28-30.72 51.2-74.24 51.2-122.88 0-49.152-19.456-92.672-51.2-122.88-33.28-30.72-76.8-46.08-122.88-46.08-28.8 0-56.448 10.24-77.824 25.6-21.376 15.36-34.944 35.328-40.96 60.032-5.12 24.576-0.512 49.152 10.24 70.656 10.752 21.504 24.576 35.328 40.96 46.08 16.384 10.752 35.328 15.36 54.272 15.36 4.096 0 7.168 3.072 7.168 7.168 0 4.096-3.072 7.168-7.168 7.168-15.36 0-30.72-6.144-42.24-17.664C262.528 406.528 259.456 409.6 256 409.6zM256 256c-51.2 0-92.672-40.96-92.672-92.672s40.96-92.672 92.672-92.672 92.672 40.96 92.672 92.672-40.96 92.672-92.672 92.672zM256 256c-51.2 0-92.672 40.96-92.672 92.672s40.96 92.672 92.672 92.672 92.672-40.96 92.672-92.672-40.96-92.672-92.672-92.672z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 0 10px var(--color-pink)) drop-shadow(0 0 5px var(--color-primary));
+}
+
+.brain-q {
+    position: absolute;
+    font-size: 5em;
+    color: var(--color-text);
+    text-shadow: 0 0 10px var(--color-text);
+    z-index: 10;
+}
+
+.main-buttons {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 50px;
+}
+
+.neon-btn {
+    width: 100%;
+    padding: 15px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.mogar-btn {
+    background-color: var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary);
+}
+
+.mogar-btn:hover {
+    box-shadow: 0 0 25px var(--color-primary), 0 0 5px #fff;
+    transform: translateY(-2px);
+}
+
+.ranking-btn {
+    background-color: var(--color-primary); /* Mesma cor para simular o design */
+    box-shadow: 0 0 15px var(--color-primary);
+}
+
+.ranking-btn:hover {
+    box-shadow: 0 0 25px var(--color-primary), 0 0 5px #fff;
+    transform: translateY(-2px);
+}
+
+.footer-nav {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.nav-item {
+    font-size: 0.75em;
+    cursor: pointer;
+    color: var(--color-text);
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-item:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--color-secondary);
+}
+
+.nav-item i {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+/* --- ESTILOS DA PÁGINA DO QUIZ (HERDADOS e Adaptados) --- */
+
+.quiz-container {
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05); /* Leve transparência no quiz */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+#question {
+    color: var(--color-text);
+    text-shadow: 0 0 5px var(--color-secondary);
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Simplificado para 1 coluna no modo mobile/dark */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--color-secondary);
+    color: var(--color-text);
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover:not(.correct):not(.incorrect) {
+    background-color: rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px var(--color-secondary);
+}
+
+/* Cores de Feedback */
+.btn.correct {
+    background-color: #28a745;
+    border-color: #1e7e34;
+    box-shadow: 0 0 10px #28a745;
+}
+
+.btn.incorrect {
+    background-color: #dc3545;
+    border-color: #bd2130;
+    box-shadow: 0 0 10px #dc3545;
+}
+
+.next-btn, .restart-btn, .home-btn {
+    background-color: var(--color-secondary);
+    box-shadow: 0 0 15px var(--color-secondary);
+    color: var(--color-text);
+    margin-top: 25px;
+}
+
+.next-btn:hover, .restart-btn:hover, .home-btn:hover {
+    box-shadow: 0 0 25px var(--color-secondary), 0 0 5px #fff;
+}
+
+#results-area h2 {
+    color: var(--color-text);
+    text-shadow: 0 0 5px var(--color-pink);
+}
+
+#final-score {
+    color: var(--color-text);
+}

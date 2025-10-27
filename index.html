@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genius Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="screen" id="start-screen">
+        <div class="header-title">GENIUS QUIZ</div>
+        
+        <div class="brain-icon">
+            <i class="fas fa-question brain-q"></i>
+        </div>
+
+        <div class="main-buttons">
+            <button class="neon-btn mogar-btn" id="start-quiz-btn">JOGAR</button>
+            <button class="neon-btn ranking-btn">RANKING</button>
+        </div>
+
+        <div class="footer-nav">
+            <div class="nav-item">
+                <i class="fas fa-cog"></i>
+                <p>CONFIGURAÇÕES</p>
+            </div>
+            <div class="nav-item">
+                <i class="fas fa-trophy"></i>
+                <p>CONQUISTAS</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="screen hide" id="quiz-screen">
+        <div class="quiz-container">
+            <div id="question-area">
+                <h2 id="question">Pergunta é carregada aqui.</h2>
+                <div id="answer-buttons" class="btn-grid">
+                    </div>
+                <button id="next-btn" class="neon-btn next-btn hide">Próxima</button>
+            </div>
+            
+            <div id="results-area" class="hide">
+                <h2>Fim do Quiz!</h2>
+                <p id="final-score">Sua Pontuação Final: 0 de 0</p>
+                <button id="restart-btn" class="neon-btn restart-btn">Reiniciar Quiz</button>
+                <button id="home-btn" class="neon-btn home-btn">Página Inicial</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
